@@ -1,12 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,7 +5,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  text-align: center;
+  background-color: #bb9977;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,9 +15,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.quote {
+  color: #bb9977;
+}
+.author {
+  color: #bb9977;
+}
 
-.App-link {
-  color: #61dafb;
+.frameBox {
+  background-color: #ffffff;
 }
 
 @keyframes App-logo-spin {
