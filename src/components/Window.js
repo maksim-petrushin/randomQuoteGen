@@ -7,12 +7,14 @@ export default class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-        color: 88888
+        color: 11881888
     }
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick = function(){
-
+    this.setState({
+        color: Math.floor(Math.random()*16777215)
+    });
   };
   render(){
     let currColor  = getColor(this.state.color);
