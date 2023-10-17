@@ -1,9 +1,3 @@
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   text-align: center;
   background-color: #bb9977;
@@ -15,15 +9,26 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.topPart{
+  height: 40%;
+}
 .quote {
   color: #bb9977;
+}
+.bottomPart{
+  display:flex;
+  flex-direction: row-reverse;
 }
 .author {
   color: #bb9977;
 }
-
 .frameBox {
+  width: 43%;
   background-color: #ffffff;
+}
+
+.maksimpetrushin{
+  font-size: 20px;
 }
 
 @keyframes App-logo-spin {

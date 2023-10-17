@@ -1,14 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Frame from './components/Frame.js'
+import Window from './components/Window.js'
 
 function App() {
   return (
-      <div className="App-header">
-        <Frame/>        
-        <h1>by maksim petrushin</h1>
+      <div>
+        <Window/>        
       </div>
-
   );
 }
 
