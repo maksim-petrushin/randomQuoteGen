@@ -9,14 +9,27 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: 11881888,
+      prevColor: "#000000",
+      colorValue: "#000000",
+      color: "#000000",
       quote: "",
-      author: ""
+      author: "",
+      animbg: "",
+      anim: ""
     }
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick = function () {
-
+    const newColor = getColor();
+    this.setState((state)=>({
+      prevColor: state.color,
+      colorValue: newColor,
+      animbg:" going-bg",
+      anim:" going"
+    }))
+    const r = document.querySelector(':root');
+    r.style.setProperty('--initial-val', this.state.colorValue);
+    r.style.setProperty('--final-val', newColor);
     const myAPIKey = getMyAPIKey();
     const myCategory = getRandomCategory();
     fetch('https://api.api-ninjas.com/v1/quotes?category=' + myCategory, {
@@ -26,20 +39,21 @@ export default class App extends React.Component {
 		},
 	})
 		.then(response => response.json())
-		.then(response => this.setState({
+		.then(response => this.setState((state)=> ({
       quote:response[0].quote,
       author:response[0].author,
-      color: Math.floor(Math.random() * 16777215)}))
-		.catch(err => console.error(err));
+      color: state.colorValue,
+      anim:"",
+      animbg:""})))
+		.catch(err => console.error("ASD" + err));
   };
 
 
   render() {
-    let currColor = getColor(this.state.color);
+    let currColor = this.state.color;
     return (
-      <div style={{ backgroundColor: currColor }} className="App-header">
-        <Frame handleClick={this.handleClick} currColor={currColor} quote={this.state.quote} author={this.state.author}/>
-        <h1 className="maksimpetrushin">by maksim petrushin</h1>
+      <div style={{ backgroundColor: currColor }} className={"App-header"+this.state.animbg}>
+        <Frame handleClick={this.handleClick} currColor={currColor} quote={this.state.quote} author={this.state.author} anim={this.state.anim} animbg={this.state.animbg}/>
       </div>
     );
   }

@@ -22,9 +22,22 @@
 .bottomPart{
   display:flex;
   flex-direction: row-reverse;
+  justify-content:space-between ;
 }
 .author {
   color: #bb9977;
+}
+.generate{
+  cursor:pointer;
+  width:200px;
+  border:none;
+  color:white;
+  margin-right:60px;
+  margin-bottom:30px;
+}
+.share{
+  margin-left:60px;
+  margin-bottom:30px;
 }
 .frameBox {
   width: 43%;
@@ -33,5 +46,29 @@
 
 .maksimpetrushin{
   font-size: 20px;
+}
+
+.going-bg{
+  animation: animbg 1s ease-in-out forwards;
+}
+@keyframes animbg {
+  0% {
+    background-color: var(--initial-val);
+  }
+  100% {
+    background-color: var(--final-val);
+  }
+}
+
+.going{
+  animation: anim 1s ease-in-out forwards;
+}
+@keyframes anim {
+  0% {
+    color: var(--initial-val);
+  }
+  100% {
+    color: var(--final-val);
+  }
 }
 

@@ -16,7 +16,7 @@ const colorsList=[
 "99665F",
 "5C2751"
 ];
-export default function getColor(number){
+export default function getColor(){
     
     const index = Math.floor(Math.random()*16);
     return "#"+colorsList[index];
