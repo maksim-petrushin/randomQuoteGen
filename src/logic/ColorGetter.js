@@ -1,41 +1,25 @@
+const colorsList=[
+"C8A2C8",
+"C2B97F",
+"000080",
+"FF7F50",
+"7FD8BE",
+"2F2F2F",
+"E30022",
+"00A676",
+"464E47",
+"114B5F",
+"2E2532",
+"5D2F27",
+"AAD922",
+"ADB4BF",
+"99665F",
+"5C2751"
+];
 export default function getColor(number){
-    let red = Math.floor(number/65536);
-    let green = Math.floor(number/256); 
-    let blue = Math.floor(number%256);
-
-    let redTensPlace = getNumNotation(Math.floor(red/16));
-    let redOnesPlace = getNumNotation(Math.floor(red%16));
-
-    let greenTensPlace = getNumNotation(Math.floor(green/16));
-    let greenOnesPlace = getNumNotation(Math.floor(green%16));
-
-    let blueTensPlace = getNumNotation(Math.floor(blue/16));
-    let blueOnesPlace = getNumNotation(Math.floor(blue%16));
-
-    return "#"+redTensPlace+redOnesPlace+greenTensPlace+greenOnesPlace+blueTensPlace+blueOnesPlace;
+    
+    const index = Math.floor(Math.random()*16);
+    return "#"+colorsList[index];
 };
 
-let getNumNotation = (number) => {
-    if(number>=0 && number<=9){
-        return ""+number;
-    }
-    else if(number == 10){
-        return "a";
-    }
-    else if(number == 11){
-        return "b";
-    }
-    else if(number == 12){
-        return "c";
-    }
-    else if(number == 13){
-        return "d";
-    }
-    else if(number == 14){
-        return "e";
-    }
-    else {
-        return "f";
-    }
-};
 

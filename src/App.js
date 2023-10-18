@@ -5,7 +5,7 @@ import Window from './components/Window.js'
 function App() {
   return (
       <div>
-        <Window/>        
+        <Window/> 
       </div>
   );
 }
